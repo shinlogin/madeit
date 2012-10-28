@@ -11,7 +11,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Backend\Controller\Indices' => 'Album\Controller\IndicesController',
+            'Backend\Controller\Indices' => 'Backend\Controller\IndicesController',
         ),
     ),
 
@@ -19,16 +19,28 @@ return array(
     'router' => array(
         'routes' => array(
             'backend' => array(
-                'type'    => 'segment',
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/backend[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
+                    'route'    => '/backend',
                     'defaults' => array(
-                        'controller' => 'Backend\Controller\Indices',
-                        'action'     => 'index',
+                        '__NAMESPACE__' => 'Backend\Controller',
+                        'controller'    => 'Indices',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -37,7 +49,7 @@ return array(
 
     'view_manager' => array(
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'indices' => __DIR__ . '/../view',
         ),
     ),
 );
