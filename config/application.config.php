@@ -2,8 +2,8 @@
 return array(
     'modules' => array(
         'Application',
-        'Backend',
-        'Frontend'
+        'Backend'
+//        'Frontend'
 //        'UserManager',
 //        'ShopManager'
     ),

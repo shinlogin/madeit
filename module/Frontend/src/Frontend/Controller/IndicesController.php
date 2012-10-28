@@ -1,6 +1,5 @@
 <?php
 /**
- * Created by JetBrains PhpStorm.
  * User: shinlogin
  * Date: 10/29/12
  * Time: 3:20 AM
