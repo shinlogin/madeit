@@ -1,13 +1,11 @@
 <?php
 /**
- * Created by JetBrains PhpStorm.
  * User: shinlogin
  * Date: 10/29/12
  * Time: 3:17 AM
  * To change this template use File | Settings | File Templates.
  */
 
-// module/Backend/config/module.config.php:
 return array(
     'controllers' => array(
         'invokables' => array(

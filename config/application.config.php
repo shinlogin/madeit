@@ -2,11 +2,10 @@
 return array(
     'modules' => array(
         'Application',
-        'Backend'
-//        'Application',
-//        'Application',
-//        'Application',
-//        'Application',
+        'Backend',
+        'Frontend'
+//        'UserManager',
+//        'ShopManager'
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
